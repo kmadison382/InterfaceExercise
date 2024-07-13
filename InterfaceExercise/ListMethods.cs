@@ -17,11 +17,11 @@ namespace InterfaceExercise
             {
                 if (i % 4 == 0)
                 {
-                    Console.WriteLine($"{i + 1} - {Vehicles[i]}");
+                    Console.WriteLine($"{i + 1} - {Vehicles[i].Name}");
                 }
                 else
                 {
-                    Console.Write($"{i + 1} - {Vehicles[i]} || ");
+                    Console.Write($"{i + 1} - {Vehicles[i].Name} || ");
                 }
             }
         }

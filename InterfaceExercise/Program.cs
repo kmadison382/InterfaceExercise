@@ -43,8 +43,10 @@ namespace InterfaceExercise
             //Implement the stubbed out method in the derived classes.
             //In the scope of them method, use string interpolation to display property values.
             //In order to also interpolate values from ICompany, research how to extend interfaces.
-            
-            
+            Car car1 = new Car() {Name = "Ford Focus", MilesPerGallon = 32, SeatMaterial = "Leather", NumberOfSeats = 5, NumberOfDoors = 4, Color = "Red", IsElectric = false, OriginCountry  = "USA", PriceRange = "$"};
+            Car car2 = new Car() {Name = "Kia Optima", MilesPerGallon = 28, SeatMaterial = "Leather", NumberOfSeats = 5, NumberOfDoors = 4, Color = "Black", IsElectric = false, OriginCountry  = "South Korea", PriceRange = "$$"};
+
+            Car.PrintDetails(car1, car2);
         }
     }
 }
