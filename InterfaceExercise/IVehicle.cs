@@ -12,6 +12,6 @@ namespace InterfaceExercise
         public int NumberOfSeats {get; set;}
         public string Color {get; set;}
         public bool IsElectric {get; set;}
-        private static List<IVehicle> Vehicles {get; set;}
+        public void PrintDetails();
     }
 }

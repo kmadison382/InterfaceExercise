@@ -16,22 +16,22 @@ namespace InterfaceExercise
         public bool IsElectric {get; set;}
         public string OriginCountry {get; set;}
         public string PriceRange {get; set;}
-        private static List<IVehicle> Vehicles = new List<IVehicle>();
         public Truck()
         {
-            Vehicles.Add(this);
+            VehicleMethods.AddVehicle(this);
         }
-        public static void PrintDetails(Truck truck)
+        public void PrintDetails()
         {
-            Console.WriteLine($"{"", -15} {truck.Name, 15}");
-            Console.WriteLine($"{"Made in", -15} {truck.OriginCountry, 15}");
-            Console.WriteLine($"{"Color", -15} {truck.Color, 15}");
-            Console.WriteLine($"{"Towing Capacity", -15} {truck.TowingCapacity, 15}");
-            Console.WriteLine($"{"Tall?", -15} {truck.IsTall, 15}");
-            Console.WriteLine($"{"NumberOfSeats", -15} {truck.NumberOfSeats, 15}");
-            Console.WriteLine($"{"Number of Doors", -15} {truck.NumberOfDoors, 15}");
-            Console.WriteLine($"{"Electric?", -15} {truck.IsElectric, 15}");
-            Console.WriteLine($"{"Price Range", -15} {truck.PriceRange, 15}");
+            Console.WriteLine($"{"", -17} {Name, 15}");
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine($"{"Made in", -17} {OriginCountry, 15}");
+            Console.WriteLine($"{"Color", -17} {Color, 15}");
+            Console.WriteLine($"{"Towing Capacity", -17} {TowingCapacity, 15}");
+            Console.WriteLine($"{"Tall?", -17} {IsTall, 15}");
+            Console.WriteLine($"{"NumberOfSeats", -17} {NumberOfSeats, 15}");
+            Console.WriteLine($"{"Number of Doors", -17} {NumberOfDoors, 15}");
+            Console.WriteLine($"{"Electric?", -17} {IsElectric, 15}");
+            Console.WriteLine($"{"Price Range", -17} {PriceRange, 15}");
         }
         public static void PrintDetails(Truck truck1, Truck truck2)
         {

@@ -16,23 +16,23 @@ namespace InterfaceExercise
         public bool CanOffroad {get; set;}
         public string OriginCountry {get; set;}
         public string PriceRange {get; set;}
-        private static List<IVehicle> Vehicles = new List<IVehicle>();
         public SUV()
         {
-            Vehicles.Add(this);
+            VehicleMethods.AddVehicle(this);
         }
         
-        public static void PrintDetails(SUV suv)
+        public void PrintDetails()
         {
-            Console.WriteLine($"{"", -15} {suv.Name, 15}");
-            Console.WriteLine($"{"Made in", -15} {suv.OriginCountry, 15}");
-            Console.WriteLine($"{"Color", -15} {suv.Color, 15}");
-            Console.WriteLine($"{"Cargo Space", -15} {suv.CargoSpace, 15}");
-            Console.WriteLine($"{"NumberOfSeats", -15} {suv.NumberOfSeats, 15}");
-            Console.WriteLine($"{"Number of Doors", -15} {suv.NumberOfDoors, 15}");
-            Console.WriteLine($"{"Offroading?", -15} {suv.CanOffroad, 15}");
-            Console.WriteLine($"{"Electric?", -15} {suv.IsElectric, 15}");
-            Console.WriteLine($"{"Price Range", -15} {suv.PriceRange, 15}");
+            Console.WriteLine($"{"", -17} {Name, 15}");
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine($"{"Made in", -17} {OriginCountry, 15}");
+            Console.WriteLine($"{"Color", -17} {Color, 15}");
+            Console.WriteLine($"{"Cargo Space", -17} {CargoSpace, 15}");
+            Console.WriteLine($"{"NumberOfSeats", -17} {NumberOfSeats, 15}");
+            Console.WriteLine($"{"Number of Doors", -17} {NumberOfDoors, 15}");
+            Console.WriteLine($"{"Offroading?", -17} {CanOffroad, 15}");
+            Console.WriteLine($"{"Electric?", -17} {IsElectric, 15}");
+            Console.WriteLine($"{"Price Range", -17} {PriceRange, 15}");
         }
         public static void PrintDetails(SUV suv1, SUV suv2)
         {

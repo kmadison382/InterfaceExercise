@@ -18,28 +18,28 @@ namespace InterfaceExercise
         public string OriginCountry {get; set;}
         public string PriceRange {get; set;}
 
-        private static List<IVehicle> Vehicles = new List<IVehicle>();
         public Car()
         {
-            Vehicles.Add(this);
+            VehicleMethods.AddVehicle(this);
         }
 
-        public static void PrintDetails(Car car)
+        public void PrintDetails()
         {
-            Console.WriteLine($"{"", -15} {car.Name, 15}");
-            Console.WriteLine($"{"Made in", -15} {car.OriginCountry, 15}");
-            Console.WriteLine($"{"Color", -15} {car.Color, 15}");
-            Console.WriteLine($"{"Miles Per Gallon", -15} {car.MilesPerGallon, 15}");
-            Console.WriteLine($"{"NumberOfSeats", -15} {car.NumberOfSeats, 15}");
-            Console.WriteLine($"{"Seat Material", -15} {car.SeatMaterial, 15}");
-            Console.WriteLine($"{"Number of Doors", -15} {car.NumberOfDoors, 15}");
-            Console.WriteLine($"{"Gas/Electric", -15} {car.IsElectric, 15}");
-            Console.WriteLine($"{"Price Range", -15} {car.PriceRange, 15}");
+            Console.WriteLine($"{"", -17} {Name, 15}");
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine($"{"Made in", -17} {OriginCountry, 15}");
+            Console.WriteLine($"{"Color", -17} {Color, 15}");
+            Console.WriteLine($"{"Miles Per Gallon", -17} {MilesPerGallon, 15}");
+            Console.WriteLine($"{"NumberOfSeats", -17} {NumberOfSeats, 15}");
+            Console.WriteLine($"{"Seat Material", -17} {SeatMaterial, 15}");
+            Console.WriteLine($"{"Number of Doors", -17} {NumberOfDoors, 15}");
+            Console.WriteLine($"{"Gas/Electric", -17} {IsElectric, 15}");
+            Console.WriteLine($"{"Price Range", -17} {PriceRange, 15}");
         }
         public static void PrintDetails(Car car1, Car car2)
         {
             Console.WriteLine($"{"", -20} {car1.Name, 15} {car2.Name, 15}");
-            Console.WriteLine("-----------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
             Console.WriteLine($"{"Made in", -20} {car1.OriginCountry, 15} {car2.OriginCountry, 15}");
             Console.WriteLine($"{"Color", -20} {car1.Color, 15} {car2.Color, 15}");
             Console.WriteLine($"{"Miles Per Gallon", -20} {car1.MilesPerGallon, 15} {car2.MilesPerGallon, 15}");
