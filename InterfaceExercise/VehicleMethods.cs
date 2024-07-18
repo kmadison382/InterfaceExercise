@@ -52,11 +52,7 @@ namespace InterfaceExercise
             {
                 Console.Clear();
                 Console.WriteLine("What would you like to look up?");
-                Console.Write("1 - Cars || ");
-                Console.Write("2 - SUVs || ");
-                Console.Write("3 - Trucks || ");
-                Console.Write("4 - All || ");
-                Console.WriteLine("5 - Back to main menu");
+                Console.WriteLine("1 - Cars || 2 - SUVs || 3 - Trucks || 4 - All || 5 - Back to main menu");
                 _ = int.TryParse(Console.ReadLine(), out int userInput);
                 int vehicleNumber;
                 IVehicle userChoice;
@@ -76,8 +72,9 @@ namespace InterfaceExercise
                             Console.WriteLine("Sorry, I don't have a record of that vehicle.");
                         }
                         Console.Write("Press enter to return to main menu.");
-                        Console.Read();
+                        Console.ReadLine();
                         validInput = true;
+                        Console.Clear();
                         break;
                     case 2:
                         ListAll<SUV>();
@@ -93,8 +90,9 @@ namespace InterfaceExercise
                             Console.WriteLine("Sorry, I don't have a record of that vehicle.");
                         }
                         Console.Write("Press enter to return to main menu.");
-                        Console.Read();
+                        Console.ReadLine();
                         validInput = true;
+                        Console.Clear();
                         break;
                     case 3:
                         ListAll<Truck>();
@@ -110,8 +108,9 @@ namespace InterfaceExercise
                             Console.WriteLine("Sorry, I don't have a record of that vehicle.");
                         }
                         Console.Write("Press enter to return to main menu.");
-                        Console.Read();
+                        Console.ReadLine();
                         validInput = true;
+                        Console.Clear();
                         break;
                     case 4:
                         ListAll();
@@ -126,17 +125,17 @@ namespace InterfaceExercise
                             Console.WriteLine("Sorry, I don't have a record of that vehicle.");
                         }
                         Console.Write("Press enter to return to main menu.");
-                        Console.Read();
+                        Console.ReadLine();
                         validInput = true;
+                        Console.Clear();
                         break;
                     case 5:
-                        Console.Write("Returning to the main menu...");
-                        Console.Read();
                         validInput = true;
+                        Console.Clear();
                         break;
                     default:
                         Console.Write($"Sorry, I don't recognize that. Press enter to try again.");
-                        Console.Read();
+                        Console.ReadLine();
                         Console.Clear();
                         break;
                 }
@@ -151,10 +150,7 @@ namespace InterfaceExercise
             {
                 Console.Clear();
                 Console.WriteLine("What kind of vehicle would you like to add?");
-                Console.Write("1 - Car || ");
-                Console.Write("2 - SUV || ");
-                Console.Write("3 - Truck || ");
-                Console.WriteLine("4 - Back to main menu");
+                Console.WriteLine("1 - Car || 2 - SUV || 3 - Truck || 4 - Back to main menu");
                 _ = int.TryParse(Console.ReadLine(), out int userInput);
 
                 switch (userInput)
@@ -172,15 +168,12 @@ namespace InterfaceExercise
                         validInput = true;
                         break;
                     case 4:
-                        Console.Write("Returning to the main menu...");
-                        Console.Read();
                         validInput = true;
                         break;
                     default:
                         Console.Write($"Sorry, I don't recognize that. Press enter to try again.");
-                        Console.Read();
+                        Console.ReadLine();
                         Console.Clear();
-                        validInput = false;
                         break;
                 }
                 if (newVehicle != null)
@@ -190,11 +183,11 @@ namespace InterfaceExercise
                     newVehicle.Name = vehicleName;
                     Console.WriteLine($"{vehicleName} has been added.");
                     Console.Write("Press enter to return to the main menu.");
-                    Console.Read();
+                    Console.ReadLine();
                     Console.Clear();
                 }
-                Console.Clear();
             }
+            Console.Clear();
         }
         public static void CompareVehicles()
         {
@@ -203,10 +196,7 @@ namespace InterfaceExercise
             {
                 Console.Clear();
                 Console.WriteLine("What would you like to compare?");
-                Console.Write("1 - Cars || ");
-                Console.Write("2 - SUVs || ");
-                Console.Write("3 - Trucks || ");
-                Console.WriteLine("4 - Back to main menu");
+                Console.WriteLine("1 - Cars || 2 - SUVs || 3 - Trucks || 4 - Back to main menu");
                 _ = int.TryParse(Console.ReadLine(), out int userInput);
                 int vehicleNumber;
                 switch (userInput)
@@ -222,14 +212,17 @@ namespace InterfaceExercise
                         if (car1 != null && car2 != null)
                         {
                             Car.PrintDetails(car1, car2);
+                            Console.Write("Press enter to return to main menu.");
+                            Console.ReadLine();
+                            validInput = true;
+                            Console.Clear();
                         }
                         else
                         {
-                            Console.WriteLine("Sorry, I can't compare that.");
+                            Console.WriteLine("Sorry, I can't compare that. Press enter to try again.");
+                            Console.ReadLine();
+                            Console.Clear();
                         }
-                        Console.Write("Press enter to return to main menu.");
-                        Console.Read();
-                        validInput = true;
                         break;
                     case 2:
                         ListAll<SUV>();
@@ -242,14 +235,17 @@ namespace InterfaceExercise
                         if (suv1 != null && suv2 != null)
                         {
                             SUV.PrintDetails(suv1, suv2);
+                            Console.Write("Press enter to return to main menu.");
+                            Console.ReadLine();
+                            validInput = true;
+                            Console.Clear();                            
                         }
                         else
                         {
-                            Console.WriteLine("Sorry, I can't compare that.");
+                            Console.WriteLine("Sorry, I can't compare that. Press enter to try again.");
+                            Console.ReadLine();
+                            Console.Clear();
                         }
-                        Console.Write("Press enter to return to main menu.");
-                        Console.Read();
-                        validInput = true;
                         break;
                     case 3:
                         ListAll<Truck>();
@@ -262,27 +258,30 @@ namespace InterfaceExercise
                         if (truck1 != null && truck2 != null)
                         {
                             Truck.PrintDetails(truck1, truck2);
+                            Console.Write("Press enter to return to main menu.");
+                            Console.ReadLine();
+                            validInput = true;
+                            Console.Clear();
                         }
                         else
                         {
-                            Console.WriteLine("Sorry, I can't compare that.");
+                            Console.WriteLine("Sorry, I can't compare that. Press enter to try again.");
+                            Console.ReadLine();
+                            Console.Clear();
                         }
-                        Truck.PrintDetails(truck1, truck2);
-                        Console.Write("Press enter to return to main menu.");
-                        Console.Read();
-                        validInput = true;
                         break;
                     case 4:
-                        Console.Write("Returning to the main menu...");
-                        Console.Read();
                         validInput = true;
+                        Console.Clear();
                         break;
                     default:
                         Console.Write($"Sorry, I don't recognize that. Press enter to try again.");
-                        Console.Read();
+                        Console.ReadLine();
+                        Console.Clear();
                         break;
                 }
             }
+            Console.Clear();
         }
     }
 }

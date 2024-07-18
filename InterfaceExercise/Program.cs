@@ -58,10 +58,7 @@ namespace InterfaceExercise
             while (programRunning == true)
             {
                 Console.WriteLine("How can I help you?");
-                Console.Write("1 - Register new vehicle | ");
-                Console.Write("2 - Look up vehicle | ");
-                Console.Write("3 - Compare vehicles | ");
-                Console.WriteLine("4 - Exit registry");
+                Console.WriteLine("1 - Register new vehicle | 2 - Look up vehicle | 3 - Compare vehicles | 4 - Exit registry");
                 _ = int.TryParse(Console.ReadLine(), out int userInput);
                     switch (userInput)
                     {
@@ -85,7 +82,7 @@ namespace InterfaceExercise
                             break;
                         default:
                         Console.WriteLine($"Sorry, I don't recognize that. Press enter to try again.");
-                        Console.Read();
+                        Console.ReadLine();
                         Console.Clear();
                         break;
                     }
